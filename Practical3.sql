@@ -63,3 +63,19 @@ SELECT * FROM department;
 SELECT * FROM student;
 SELECT * FROM course;
 SELECT * FROM enrollment;
+
+// FOR ADDING FACULTY //
+CREATE TABLE faculty (
+    faculty_id INT PRIMARY KEY,
+    faculty_name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) UNIQUE,
+    phone_no VARCHAR(15) UNIQUE,
+    dept_id INT,
+    FOREIGN KEY (dept_id) REFERENCES department(dept_id)
+);
+
+INSERT INTO faculty VALUES
+(201, 'Dr. Sharma', 'sharma@gmail.com', '9876543210', 1),
+(202, 'Prof. Mehta', 'mehta@gmail.com', '9876543211', 2);
+
+SELECT * FROM faculty;
